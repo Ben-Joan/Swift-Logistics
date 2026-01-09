@@ -1,5 +1,9 @@
 # Swift Logistics Analysis
 
+## Executive Summary
+
+This project analyzes shipment and transportation data for Swift Logistics to **identify the root causes of delivery delays and inefficiencies** across routes, suppliers, customers, and materials. Using operational KPIs such as on-time delivery rate, lead time, and delay duration, the analysis reveals that **over 60% of shipments are delayed**, with **long-distance routes (>500 km), supplier performance gaps, and limited GPS visibility** as the primary contributors. The findings provide data-backed recommendations for route optimization, supplier accountability, capacity planning, and tracking improvements to enhance delivery reliability, reduce lead times, and support more efficient logistics operations.
+
 ## Introduction 
 From an industry-wide perspective, disruptions in transportation and logistics contribute to supply chain disruptions, increased operational costs, and inefficiencies in freight movement. Whether in road, rail, air, or sea transport, delays can lead to congestion at ports and distribution hubs, increased fuel consumption, and higher carbon emissions, further impacting environmental sustainability.
 
@@ -102,35 +106,28 @@ To effectively analyze the Logistics & Transportation data and provide actionabl
 ## Recommendations 🚀
 To improve transportation efficiency:
 
-1. **Improve On-Time Delivery Performance**: Establish SLA-based performance targets for routes exceeding 500 km, Prioritize delay reduction initiatives on high-volume and high-delay routes
+1. **Improve On-Time Delivery Performance**: Since more than 60% of shipments are delayed, Swift Logistics should focus on improving delivery timing.
+Set clear delivery targets for long-distance routes (especially routes above 500 km) where delays are most common. Regularly track delivery performance
+to quickly identify routes that need attention.
 
-2. Route & Network Optimization: Reevaluate long-distance routes for consolidation or alternative routing, Introduce route-level performance benchmarking to identify chronic bottlenecks
+2. **Optimize Routes and Transportation Planning:** Review frequently used long-distance routes to see if better or shorter alternatives are available.
+Combine shipments where possible to reduce repeated trips on the same route. Monitor routes that consistently experience delays and prioritize them for improvement.
 
-3. **Supplier & Carrier Management**: Conduct supplier performance audits for high-delay carriers, Introduce incentive-based contracts tied to on-time delivery metrics and Reduce reliance on “Unknown” suppliers to improve accountability.
+3. **Strengthen Supplier and Carrier Performance:** Evaluate suppliers and transport partners that record more delays than on-time deliveries. Work more
+closely with reliable suppliers and reduce dependency on poorly performing or unidentified (“Unknown”) carriers.Introduce simple performance tracking so
+suppliers understand where they need to improve.
 
-4. GPS & Visibility Enhancement
+4. **Improve Shipment Tracking and Visibility:** Since Consent Track GPS manages most shipments but shows weak performance, Swift Logistics should review
+its effectiveness. Improve GPS tracking to allow better visibility of shipment locations and delays. More reliable tracking will help operations teams
+respond faster when issues occur during transit
 
-Reassess partnership with Consent Track GPS
+5. **Plan Better for Peak Periods:** Increase planning and resources during January and mid-year (June–August) when shipment volume is highest.
+Ensure enough vehicles, drivers, and support staff are available during busy periods. Better planning during peak times will reduce pressure on the system
+and limit delays.
 
-Improve tracking accuracy and real-time visibility to enable proactive delay management
-
-Consider multi-provider GPS redundancy for high-value or time-critical shipments
-
-5. Demand & Capacity Planning
-
-Strengthen capacity planning for January and mid-year peaks
-
-Align staffing and fleet availability with weekday demand patterns
-
-6. Material-Specific Process Improvements
-
-Investigate handling and packaging processes for Empty Foam and Solenoid Assembly
-
-Introduce material-specific lead time benchmarks and monitoring
+6. **Address Material-Specific Delays:** Investigate why Empty Foam and Solenoid Assembly shipments take longer to deliver. Review handling, packaging, and transportation methods for these materials. Set realistic delivery timelines for materials that require special handling.
 
 By implementing these recommendations, there will be improvement in transportation efficiency, reducing delays, and enhancing customer satisfaction.
-
-
 
 
 
