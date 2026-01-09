@@ -21,17 +21,13 @@ To effectively analyze the Logistics & Transportation data and provide actionabl
 
 ## Insights 💡
 
-#### Logistics Performance Overview: This page highlights the key metrics, booking trend analysis in monthly, hourly and daily occurrence. It also identifies the top 10 performers ranked by shipping volume for Route, Suppliers, Customers, Material flow and Drivers.
-
-![Image](https://github.com/Ben-Joan/Logistics-Transportation-Analysis/blob/main/Logistics%20%26%20Transport%20Tracking_page-0001.jpg)
-
+#### Logistics Performance Overview:
 **Overall Booking Performance:**
- - Total Bookings: 3,582
- - *On-Time Rate: 39%* (indicating a low efficiency in timely deliveries)
- - *Delay Rate: 61%* (high delay percentage, requiring investigation)
- - On average, *delivery takes: 9 days* after *7 days delay* from the planned delivery day.
- - Average Distance: 806 km
- - Also, the *Lead time is averagely 15hrs* (i.e the time between when the booking is made and when the delivery started) indicating that most shipments starts within 24hrs of booking. 
+ - Total Bookings: 3,583 and Average Distance: 842 km
+ - **On-Time Rate: 38.5%** (indicating a low efficiency in timely deliveries) and **Delay Rate: 61.5%** (high delay percentage, requiring investigation)
+ - On average, **delivery takes: 5 days** after **7 days delay** from the planned delivery day.
+ - Also, the **Lead time is averagely 9days 3hrs** (i.e the time between when the booking is made and when the order is deliverd)
+ - Average **Order-to-Dispatch time** is **3hrs** indicating that most shipments starts within 24hrs of booking. 
 
 **Booking Trends Analysis:**
  - Monthly Booking: is Peak in mid-year (June-August) and also January, but with noticeable spikes in delayed deliveries.
@@ -89,5 +85,6 @@ To improve transportation efficiency:
  - **Vehicle Maintenance:** Further Investigation of the vehicles with high delay impact and perform necessary maintenance to prevent unnecessary breakdowns.
 
 By implementing these recommendations, there will be improvement in transportation efficiency, reducing delays, and enhancing customer satisfaction.
+
 
 
