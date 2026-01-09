@@ -1,64 +1,97 @@
 # Swift Logistics Analysis
 
+## Executive Summary
+
+This project analyzes shipment and transportation data for Swift Logistics to **identify the root causes of delivery delays and inefficiencies** across routes, suppliers, customers, and materials. Using operational KPIs such as on-time delivery rate, lead time, and delay duration, the analysis reveals that **over 60% of shipments are delayed**, with **long-distance routes (>500 km), supplier performance gaps, and limited GPS visibility** as the primary contributors. The findings provide data-backed recommendations for route optimization, supplier accountability, capacity planning, and tracking improvements to enhance delivery reliability, reduce lead times, and support more efficient logistics operations.
+
 ## Introduction 
 From an industry-wide perspective, disruptions in transportation and logistics contribute to supply chain disruptions, increased operational costs, and inefficiencies in freight movement. Whether in road, rail, air, or sea transport, delays can lead to congestion at ports and distribution hubs, increased fuel consumption, and higher carbon emissions, further impacting environmental sustainability.
 
-Understanding the key factors contributing to disruptions is crucial for developing strategies to minimize their impact. Therefore, In today's fast-paced supply chain industry, optimizing shipment efficiency, reducing delivery times, and enhancing operational visibility are critical for success. **The goal of this project is to explore and derive actionable insights that drive decision making** for Swift logistics, featuring information on shipment records, supplier, customer and materials information, GPS tracking, vehicle information, and transportation distances.
+This project analyzes shipment and transportation data for Swift Logistics to identify delay drivers, performance gaps, and optimization opportunities. The goal is to generate actionable insights that support data-driven decision-making and operational improvement.
 
-## Strategy Implemented 🎯 
+**Goal: Improve shipment efficiency, reduce delivery delays, and enhance logistics performance visibility.**
 
-To effectively analyze the Logistics & Transportation data and provide actionable insights, I followed a systematic approach:
-   1. **Business and Data understanding:** I started with making research on logistics processes, understanding the key [business questions](https://github.com/Ben-Joan/Logistics-Transportation-Analysis/blob/main/Intro%20%26%20Brief_Challenge%2024_English.docx) and Exploring the metadata and [data](https://github.com/Ben-Joan/Logistics-Transportation-Analysis/blob/main/Transportation%20%26%20Logistics%20Tracking%20Dataset.xlsx) to understand data structure and contents.
- 
-   2. **Data Cleaning & Transformation:** By removing duplicates and unnecessary columns e.g (Driver No), creating new columns both calculated and conditional colums, and creating a star schema model of the data. ![Image](https://github.com/Ben-Joan/Logistics-Transportation-Analysis/blob/main/ERD.PNG)
+The data features information on: shipment records, supplier, customer and materials information, GPS tracking, vehicle information, and transportation distances, etc.
 
-   3. **Exploratory Data Analysis (EDA):** Exploring the data, creating dax measures for key metrics and analyzing the data to answer the key business questions thereby identifying patterns and insights from the data.
+## Key Questions 
 
-   4. **Dashboard Development:** To visualize these insights effectively, I built a dynamic dashboard. The dashboard allows the monitoring of logistics performance and identifies delay causes.
+To effectively analyze the Logistics & Transportation data and provide actionable insights:
+   1. Top Routes: What are the most common shipment routes and their average distances?
+   2. Delivery Times: Which routes have the longest delivery times?
+   3. Peak Shipments: When are the busiest booking and delivery dates?
+   4. Delays Analysis: What factors contribute to shipment delays?
+   5. Supplier Trends: Which suppliers handle the most shipments, and do some have higher delays?
+   6. Customer Insights: Which customers receive the most shipments, and do they experience delays?
+   7. Material Movement: What are the most frequently shipped materials, and do certain materials have longer delivery times?
+   8. Bottlenecks: Where are the most common shipment delays based on GPS data?
+   9. Route Optimization: What strategies can improve transportation efficiency?
+       
+### Measured KPIs Include:
+- Total Shipments: Total number of bookings processed
 
-   5. **Suggestions for Improvement:** Finally, based on the data analysis, I provided suggestions and strategies for reducing delay rate and optimizing efficiency.
+      Formula: COUNT(Shipment_ID)
+
+- Average Distance: Mean distance traveled per shipment
+
+      Formula: SUM(Distance) / Total Shipments
+  
+- Average Delivery Time: Average transit time per shipment
+
+      Formula: AVG(Trip End Date − Trip Start Date)
+
+- Average Delay: Average deviation from planned delivery date
+
+      Formula: AVG(Actual ETA − Planned ETA)
+  
+- Average Lead Time: End-to-end order fulfillment duration
+
+      Formula: AVG(Actual ETA − Booking Date)
+
+- Order-to-Dispatch Time: Time from booking to trip start
+
+      Formula: AVG(Trip Start Date − Booking Date)
+
+- On-Time Delivery Rate: Percentage of on-time shipments
+
+      Formula: (On-Time Shipments ÷ Total Shipments) × 100
+
+- Delay Rate: Percentage of delayed shipments
+
+      Formula: (Delayed Shipments ÷ Total Shipments) × 100
 
 
 ## Insights 💡
 
 #### Logistics Performance Overview:
 **Overall Booking Performance:**
- - Total Bookings: 3,583 and Average Distance: 842 km
- - **On-Time Rate: 38.5%** (indicating a low efficiency in timely deliveries) and **Delay Rate: 61.5%** (high delay percentage, requiring investigation)
- - On average, **delivery takes: 5 days** after **7 days delay** from the planned delivery day.
- - Also, the **Lead time is averagely 9days 3hrs** (i.e the time between when the booking is made and when the order is deliverd)
- - Average **Order-to-Dispatch time** is **3hrs** indicating that most shipments starts within 24hrs of booking. 
+ - **Total Bookings: 3,583** and **Average Distance: 842 km**
+ - **On-Time Rate: 38.5%** (indicating a low efficiency in timely deliveries) and **Delay Rate: 61.5%** indicating significant delivery inefficiencies.
+ - Average delivery occurs **5 days after dispatch**, with an **average 7-days delay** beyond planned ETA
+ - The **Lead time** is averagely **9 days** (i.e the time between when the booking is made and when the order is delivered)
+ - Average **Order-to-Dispatch time** is **~3hrs** indicating fast shipment initiation after booking.
 
 **Booking Trends Analysis:**
- - Monthly Booking: is Peak in mid-year (June-August) and also January, but with noticeable spikes in delayed deliveries.
- - Peak booking time: 
-   - Most bookings happen between 13:00 - 18:00 (1 PM - 6 PM) across all weekdays. The second busiest period is 6:00 - 12:00 (6 AM - 12 PM).Very few bookings occur between 0:00 - 5:00 AM, indicating minimal activity at night.
- - Day-wise Booking Trends:
-   - Monday to Thursday show the highest volume of bookings.Friday sees a decline in bookings,
-while Saturday and Sunday have the lowest bookings, with Sunday showing very little activity.
-
+ - Seasonality: Peak bookings occur in **January and mid-year (June–August)**, with January showing a notable spike in delays.
+ - Time of day: Most bookings occur between **09:00 and 18:00**, aligning with business operating hours
+ - Day of week:
+      - Highest booking volumes from **Monday to Thursday**
+      - Decline on **Fridays**, with minimal activity on weekends
+    
 **Route, Supplier, Customer and Materials Performance:**
- - The Kanchipuram, Tamil Nadu >> Kanchipuram, Tamil Nadu route had the highest shipment volume, with low delay rate and high time efficiency, indicating proper scheduling and routing algorithm.
- - Many suppliers have significantly more delays than on-time deliveries. Top suppliers with high delays include Ekta Transport Company, Trans Cargo India, etc.
- - A significant portion of bookings across customers are delayed.Larsen & Toubro Limited and Ford India Private Limited have the highest number of bookings and very high delay rate. While Ford India has a better time efficiency, Larsen's is very low indicating that delivery is taking too long even with the less average distance being covered.
- - Auto Parts have the highest total bookings(1212) but Empty Foam and Solenoid Assembly is taking the longest time to deliver.
+ - High-volume state routes: **Tamil Nadu >> Tamil Nadu, Maharashtra >> Tamil Nadu & Tamil Nadu >> Maharashtra**
+ - High-volume city routes: **Kanchipuram >> Kanchipuram, Gurgaon >> Kanchipuram & Pune >> Kanchipuram**
+ - **Geographic concentration**: Tamil Nadu, particularly Kanchipuram, is a major shipment hub
+ - Most high-volume routes experience **high delay rates**, especially those exceeding **500 km**
+ - **Supplier performance:**
+      - Several suppliers have more delayed than on-time deliveries. Top **high-delay suppliers** include Unknown, Ekta Transport Company, and Trans Cargo India.
+ - **Customer performance:**
+      - **Larsen & Toubro Limited and Ford India Private Limited** have the highest shipment volumes and high delay rate.
+ - **Material movement:**
+      - Auto Parts have the highest shipment volume, Empty Foam and Solenoid Assembly experience the longest delivery times
+ - **GPS Provider Performance**
+      - Consent Track GPS manages over 50% of shipments
+      - Despite high usage, it shows poor route visibility and tracking performance. A large share of highly delayed shipments are associated with this GPS provider, limiting real-time monitoring and delay mitigation.
 
-
-#### Logistics Delay Analysis: This page identifies delay analysis causes as Distance, Vehicle Type, Driver, Route and Gps provider. It shows how far shipments go and delivery time efficiency, top 10 routes where most delays occur, top 10 vehicle and driver with high delay rate and Gps provider analysis.
-
-![Image](https://github.com/Ben-Joan/Logistics-Transportation-Analysis/blob/main/Logistics%20%26%20Transport%20Tracking_page-0002.jpg)
-
-**Distance Analysis:**
- - Most bookings are within shorter distances (i e 0 - 500km), followed by longer distance (2000+km). But delays persist across all ranges, most occurring at the 0-500km category.
- - Delivery time increases with distance but delay does not increase at the same rate, especially at shorter distances (0-500km) which shows very poor time efficiency. Time efficiency shows the percentage of delivery time that is actually spent on transit. The very poor time efficiency at shorter distance *(11%)* indicates a severe problem which might possibly be from poor scheduling, traffic congestion or vehicle inefficiency due to high shipment volume within this distance.
-
-**High Delay Impact:**
- - Bangalore Rural, Karnataka >> Koppal, Karnataka & Jaipur, Rajasthan>> Jhunjhunun, Rajasthan are the top route with a very high delay, especially since they're moving within short distance with small shipment.
- - 40 FT 3XL Trailer and 40FT Multi Axle Vehicles are traveling within shorter distance but have high delay rate, therefore needs to be assessed properly for better fleet management.
- - The top drivers with very high delay and poor efficiency are also identified.
-
-**GPS Provider Analysis**
- Consent Track Gps provider being the top tracker managing more than 50% of total shipments had a very low performance in providing a routing optimization algorithm for shipments. Also, most shipments with high delay impact were managed by consent track.
 
 ## Dashboard View
 ![Dashboard1](https://github.com/Ben-Joan/Swift-Logistics/blob/main/Images/Overview.PNG)
@@ -70,19 +103,29 @@ while Saturday and Sunday have the lowest bookings, with Sunday showing very lit
 [Explore the Dashboard](https://app.powerbi.com/view?r=eyJrIjoiODFkNzlhYTQtYmE4NC00ODI2LTlkMDUtNGFjOTQ5N2Q5OTdmIiwidCI6IjczMDc4ZWNkLWYzM2UtNDQxYy05ODYyLWVhZDdjNjFhNGU4MiJ9)
 
 
-## Recommendations 🛠️
+## Recommendations 🚀
 To improve transportation efficiency:
 
- - **Improve Scheduling and Resource Allocation:** Delivery time efficiency analysis reveals poor efficiency for shorter distances, indicating potential issues with scheduling, slow processing times, or ineffective last-mile delivery strategies. To address this, allocating additional resources such as vehicles and drivers can help optimize booking schedules and delivery operations. Thereby, enhancing overall delivery time efficiency.
+1. **Improve On-Time Delivery Performance**: Since more than 60% of shipments are delayed, Swift Logistics should focus on improving delivery timing.
+Set clear delivery targets for long-distance routes (especially routes above 500 km) where delays are most common. Regularly track delivery performance
+to quickly identify routes that need attention.
 
+2. **Optimize Routes and Transportation Planning:** Review frequently used long-distance routes to see if better or shorter alternatives are available.
+Combine shipments where possible to reduce repeated trips on the same route. Monitor routes that consistently experience delays and prioritize them for improvement.
 
- - **Switch to More Reliable GPS Providers:** Review Consent Track System or consider replacing with more reliable trackers like Vamosy, Apace Transco, or a combination of Vamosy with Ekta or Krc Logistics for better route optimization and tracking.
+3. **Strengthen Supplier and Carrier Performance:** Evaluate suppliers and transport partners that record more delays than on-time deliveries. Work more
+closely with reliable suppliers and reduce dependency on poorly performing or unidentified (“Unknown”) carriers.Introduce simple performance tracking so
+suppliers understand where they need to improve.
 
- - **Supplier and Customer Relationship Management:** Investigate top suppliers with high delay rates and prioritize top customers with long delivery time (e.g., Larsen, Otis Elevator) to maintain business relationships
+4. **Improve Shipment Tracking and Visibility:** Since Consent Track GPS manages most shipments but shows weak performance, Swift Logistics should review
+its effectiveness. Improve GPS tracking to allow better visibility of shipment locations and delays. More reliable tracking will help operations teams
+respond faster when issues occur during transit
 
- -  Ensure adequate resources and staffing during peak periods i.e mid-year, weekdays, 1-6 pm to avoid delayed schedule and drivers for delivery.
+5. **Plan Better for Peak Periods:** Increase planning and resources during January and mid-year (June–August) when shipment volume is highest.
+Ensure enough vehicles, drivers, and support staff are available during busy periods. Better planning during peak times will reduce pressure on the system
+and limit delays.
 
- - **Vehicle Maintenance:** Further Investigation of the vehicles with high delay impact and perform necessary maintenance to prevent unnecessary breakdowns.
+6. **Address Material-Specific Delays:** Investigate why Empty Foam and Solenoid Assembly shipments take longer to deliver. Review handling, packaging, and transportation methods for these materials. Set realistic delivery timelines for materials that require special handling.
 
 By implementing these recommendations, there will be improvement in transportation efficiency, reducing delays, and enhancing customer satisfaction.
 
