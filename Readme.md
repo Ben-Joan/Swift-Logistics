@@ -1,9 +1,9 @@
-# Logistics-Transportation-Analysis
+# Swift Logistics Analysis
 
 ## Introduction 
 From an industry-wide perspective, disruptions in transportation and logistics contribute to supply chain disruptions, increased operational costs, and inefficiencies in freight movement. Whether in road, rail, air, or sea transport, delays can lead to congestion at ports and distribution hubs, increased fuel consumption, and higher carbon emissions, further impacting environmental sustainability.
 
-Understanding the key factors contributing to disruptions is crucial for developing strategies to minimize their impact. Therefore, In today's fast-paced supply chain industry, optimizing shipment efficiency, reducing delivery times, and enhancing operational visibility are critical for success. **The goal of this project is to explore and derive actionable insights that drive decision making** from a real-world logistics tracking dataset, featuring shipment records, GPS tracking, vehicle information, and transportation distances.
+Understanding the key factors contributing to disruptions is crucial for developing strategies to minimize their impact. Therefore, In today's fast-paced supply chain industry, optimizing shipment efficiency, reducing delivery times, and enhancing operational visibility are critical for success. **The goal of this project is to explore and derive actionable insights that drive decision making** for Swift logistics, featuring information on shipment records, supplier, customer and materials information, GPS tracking, vehicle information, and transportation distances.
 
 ## Strategy Implemented 🎯 
 
@@ -64,6 +64,11 @@ while Saturday and Sunday have the lowest bookings, with Sunday showing very lit
 **GPS Provider Analysis**
  Consent Track Gps provider being the top tracker managing more than 50% of total shipments had a very low performance in providing a routing optimization algorithm for shipments. Also, most shipments with high delay impact were managed by consent track.
 
+## Dashboard View
+![Dashboard1](https://github.com/Ben-Joan/Swift-Logistics/blob/main/Images/Overview.PNG)
+
+![Dashboard2](https://github.com/Ben-Joan/Swift-Logistics/blob/main/Images/Delay.PNG)
+
 [Check out the Dashboard](https://app.powerbi.com/view?r=eyJrIjoiODFkNzlhYTQtYmE4NC00ODI2LTlkMDUtNGFjOTQ5N2Q5OTdmIiwidCI6IjczMDc4ZWNkLWYzM2UtNDQxYy05ODYyLWVhZDdjNjFhNGU4MiJ9)
 
 
@@ -82,3 +87,4 @@ To improve transportation efficiency:
  - **Vehicle Maintenance:** Further Investigation of the vehicles with high delay impact and perform necessary maintenance to prevent unnecessary breakdowns.
 
 By implementing these recommendations, there will be improvement in transportation efficiency, reducing delays, and enhancing customer satisfaction.
+
