@@ -67,9 +67,11 @@ while Saturday and Sunday have the lowest bookings, with Sunday showing very lit
 ## Dashboard View
 ![Dashboard1](https://github.com/Ben-Joan/Swift-Logistics/blob/main/Images/Overview.PNG)
 
-![Dashboard2](https://github.com/Ben-Joan/Swift-Logistics/blob/main/Images/Delay.PNG)
+![Dashboard2](https://github.com/Ben-Joan/Swift-Logistics/blob/main/Images/Time.PNG)
 
-[Check out the Dashboard](https://app.powerbi.com/view?r=eyJrIjoiODFkNzlhYTQtYmE4NC00ODI2LTlkMDUtNGFjOTQ5N2Q5OTdmIiwidCI6IjczMDc4ZWNkLWYzM2UtNDQxYy05ODYyLWVhZDdjNjFhNGU4MiJ9)
+![Dashboard3](https://github.com/Ben-Joan/Swift-Logistics/blob/main/Images/Delay.PNG)
+
+[Explore the Dashboard](https://app.powerbi.com/view?r=eyJrIjoiODFkNzlhYTQtYmE4NC00ODI2LTlkMDUtNGFjOTQ5N2Q5OTdmIiwidCI6IjczMDc4ZWNkLWYzM2UtNDQxYy05ODYyLWVhZDdjNjFhNGU4MiJ9)
 
 
 ## Recommendations 🛠️
@@ -87,4 +89,5 @@ To improve transportation efficiency:
  - **Vehicle Maintenance:** Further Investigation of the vehicles with high delay impact and perform necessary maintenance to prevent unnecessary breakdowns.
 
 By implementing these recommendations, there will be improvement in transportation efficiency, reducing delays, and enhancing customer satisfaction.
+
 
